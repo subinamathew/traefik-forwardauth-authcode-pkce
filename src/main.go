@@ -41,7 +41,7 @@ func newAuthenticator() (*authenticator, error) {
 		//ClientSecret: we are using Authorization Code with PKCE flow, client secret is not required as long your client is a public application (SPA for eg)
 		RedirectURL: os.Getenv("AUTH_CALLBACK_URL"),
 		Endpoint:    provider.Endpoint(),
-		Scopes:      []string{oidc.ScopeOpenID, "profile", "email"},
+		Scopes:      []string{oidc.ScopeOpenID},
 	}
 
 	return &authenticator{
